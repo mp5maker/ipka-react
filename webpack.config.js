@@ -1,14 +1,19 @@
 const path = require('path')
 const uglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const compressionPlugin = require('compression-webpack-plugin')
+const htmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: "./react-app/app/main.js",
     output: {
         path: path.resolve(__dirname, 'assets'),
         filename: "react-main.js",
+        publicPath: '/'
     },
     devtool: '#source-map',
+    devServer: {
+        historyApiFallback: true,
+    },
     module: {
         rules: [
             {
@@ -25,6 +30,14 @@ module.exports = {
                 use: [
                     {
                         loader: 'style:loader!css-loader!sass-loader'
+                    }
+                ]
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: "html-loader"
                     }
                 ]
             }
@@ -45,6 +58,10 @@ module.exports = {
         ]
     },
     plugins: [
-        new compressionPlugin()
+        new compressionPlugin(),
+        new htmlWebPackPlugin({
+            template: "./react-app/deploy/index.html",
+            filename: "./index.html"
+        })
     ]
 };
