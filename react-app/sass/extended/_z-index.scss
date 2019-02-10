@@ -1,0 +1,20 @@
+$zindex: (
+    header: 6000,
+    sidebar: 7000,
+    smallComponent: 1000,
+    biggerComponent: 2000,
+    main: 6000,
+    footer: 5000,
+    dropdown: 7000,
+    overlay: 8000,
+    modal: 9000,
+    multiselect: 16000,
+    topAlert: 16000,
+    multiselectLabel: 15000,
+    dropdownModal: 20000,
+    dropdownModalLabel: 22000,
+);
+
+@function get-zindex($type) {
+    @return map-get($zindex, $type);
+} 
