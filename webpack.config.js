@@ -13,6 +13,9 @@ module.exports = {
     devtool: '#source-map',
     devServer: {
         historyApiFallback: true,
+        watchOptions: {
+            poll: true
+        }
     },
     module: {
         rules: [
