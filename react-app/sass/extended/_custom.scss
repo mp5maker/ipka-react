@@ -7,14 +7,3 @@
   font-style: normal;
   font-display: block;
 }
-
-body {
-    &.modal-open {
-        padding-right: 0 !important;
-        .modal {
-          padding-right: 0 !important;
-          z-index: get-zindex(dropdownModal);
-          background-color: darken($box-shadow-color, 20%);
-        }
-    }
-}

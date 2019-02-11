@@ -3,7 +3,7 @@ const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 
 /////////////////// DEFAULT ///////////////////////
-gulp.task('default', ['css', 'librarycss', 'fonts', 'favicon']);
+gulp.task('default', ['css', 'librarycss', 'fonts']);
 
 /////////////////// MAIN CSS //////////////////////
 gulp.task('css', function () {
