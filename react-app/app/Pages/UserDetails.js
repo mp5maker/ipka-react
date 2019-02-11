@@ -13,7 +13,9 @@ class UserDetails extends Component {
      * Before the component mounts
      */
     componentWillMount() {
-        this.props.UserDetailsAction(RouteId({ ...this.props, redirectUrl: Routes.userList}))
+        if (RouteId({...this.props})) {
+            this.props.UserDetailsAction(RouteId({ ...this.props}))
+        }
     }
 
     /**

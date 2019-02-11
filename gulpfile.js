@@ -3,7 +3,7 @@ const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 
 /////////////////// DEFAULT ///////////////////////
-gulp.task('default', ['css', 'librarycss', 'fonts', 'favicon']);
+gulp.task('default', ['css', 'librarycss', 'fonts']);
 
 /////////////////// MAIN CSS //////////////////////
 gulp.task('css', function () {
@@ -32,12 +32,6 @@ var fontfiles = [
 gulp.task('fonts', function () {
     gulp.src(fontfiles)
         .pipe(gulp.dest('assets/fonts'))
-});
-
-/////////////////// FAVICON ///////////////////////
-gulp.task('favicon', function () {
-    gulp.src('react-app/deploy/favicon.ico')
-        .pipe(gulp.dest('assets'))
 });
 
 /////////////////// WATCH CSS /////////////////////

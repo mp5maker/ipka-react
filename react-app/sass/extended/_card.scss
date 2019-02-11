@@ -1,0 +1,62 @@
+.custom-card {
+    margin: 7px;
+    box-shadow: 0 1px 1px 0 $box-shadow-color;
+    min-width: 360px;
+    max-width: 360px;
+    min-height: 220px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    .image-container {
+        margin-top: 8px;
+        img {
+            transition: all linear 0.25s;
+            &.image-thumb {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+            }
+        }
+    }
+    .person-details {
+        margin-top: 12px;
+        .username {
+            margin-right: 6px;
+        }
+        .city {
+            text-transform: lowercase;
+        }
+    }
+    &:hover {
+        box-shadow: 0 2px 2px 0 $box-shadow-color;
+        .image-container {
+            img {
+                transition: all linear 0.25s;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .custom-card {
+        min-width: 250px;
+        max-width: 250px;
+    }
+}
+
+@media screen and (max-width: 558px) {
+    .custom-card {
+        min-width: 200px;
+        max-width: 200px;
+        font-size: 95%;
+    }
+}
+
+@media screen and (max-width: 457px) {
+    .custom-card {
+        min-width: 90%;
+        font-size: 100%;
+        max-width: 90%;
+    }
+}

@@ -11,4 +11,9 @@ const routes = {
 const Routes = reduce(keys(routes), (newObj, path) => {
     return { ...newObj, [path]: prefix + routes[path] }
 }, {})
-export { Routes }
+
+const RouteDetails = ({route, id}) => {
+    return routes[route].replace(':id', id)
+}
+
+export { Routes, RouteDetails }
