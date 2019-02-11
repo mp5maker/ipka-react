@@ -23,3 +23,8 @@
 
 #### For Sass and Compiling all the JS libraries together ####
     gulp && gulp watch 
+
+#### Resources Used ####
+    https://www.json-generator.com/
+    https://www.placeholder.com/
+    https://jsonplaceholder.typicode.com/
