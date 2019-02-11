@@ -19,6 +19,7 @@ const En = {
 
     // G
     "GENDER": "Gender",
+    "GO_BACK": "Go Back",
     
     // I
     "IPKA": "IPKA",

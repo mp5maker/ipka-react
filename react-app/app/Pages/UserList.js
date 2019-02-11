@@ -59,7 +59,7 @@ class UserList extends Component {
         })
         return(
             <Fragment>
-                <Header />
+                <Header {...history}/>
                 <Filter onChangeForm={this.onChangeForm}/>
                 <div className="container-fluid">
                     <div className="row">
