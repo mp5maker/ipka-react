@@ -1,12 +1,21 @@
 import React, { Component, Fragment } from 'react'
 import { RouteId } from '../Utilities/RouteDetails'
-import { Routes } from '../Constants/Routes'
 import { UserDetailsAction } from '../Actions/UserAction'
+import { Header} from '../Layouts/Header'
+import { Loading } from '../Layouts/Loading'
+import { En } from '../Constants/En'
 import { connect } from 'react-redux'
+import { isEmpty, map } from 'lodash'
+import { Detail } from '../Layouts/Detail'
 
 class UserDetails extends Component {
     constructor(props) {
         super(props)
+        this.goBack = this.goBack.bind(this)
+    }
+
+    goBack() {
+        this.props.history.goBack()
     }
 
     /**
@@ -42,10 +51,54 @@ class UserDetails extends Component {
     }
 
     render() {
-        console.log(this.props.user)
+        const { user, history } = this.props
+        const { payload, loading, error } = user
         return(
             <Fragment>
-                User Details
+                <Header {...history} />
+                <div className="containuer-fluid">
+                    <div className="row">
+                        <div className="col">
+                            <div className="user-list">
+                                {
+                                    (loading) ?
+                                    <Fragment>
+                                        <Loading />
+                                    </Fragment>
+                                    : <Fragment></Fragment>
+                                }
+                                {
+                                    !isEmpty(error) ?
+                                    <Fragment>
+                                        { En['ERROR'] }
+                                    </Fragment>
+                                    : <Fragment></Fragment>
+                                }
+                                {
+                                    (payload) ? 
+                                    map([payload], (person, index) => {
+                                        return <Detail {...person} key={index}/>
+                                    })
+                                    : <Fragment></Fragment>
+                                }
+                            </div>
+                            <div className="back-button text-center">
+                                <button
+                                    onClick={this.goBack} 
+                                    type="button" 
+                                    className="btn btn-primary" 
+                                    role="Goes Back">
+                                    <span className="icon">
+                                        <i className="fa fa chevron-left"></i>
+                                    </span>
+                                    <span className="text">
+                                        { En['GO_BACK'] }
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </Fragment>
         )
     }

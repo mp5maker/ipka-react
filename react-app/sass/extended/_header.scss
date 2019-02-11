@@ -1,27 +1,29 @@
 header {
     margin-top: 25px;
     h3 {
-        &.header-title {
-            text-align: center;
-            color: $red;
-            cursor: pointer;
-            span {
-                height: 36px;
-                &.icon {
-                    i {
-                        height: 36px;
-                        &.fa-fw {
-                            width: 36px;
-                            max-height: 28px;
-                            margin-right: 6px;
+        text-align: center;
+        span {
+            &.header-title {
+                color: $red;
+                cursor: pointer;
+                span {
+                    height: 36px;
+                    &.icon {
+                        i {
+                            height: 36px;
+                            &.fa-fw {
+                                width: 36px;
+                                max-height: 28px;
+                                margin-right: 6px;
+                            }
                         }
                     }
                 }
-            }
-            &:hover {
-                span {
-                    &.icon {
-                        animation: heart-bounce 0.5s linear alternate infinite; 
+                &:hover {
+                    span {
+                        &.icon {
+                            animation: heart-bounce 0.5s linear alternate infinite; 
+                        }
                     }
                 }
             }
