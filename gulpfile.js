@@ -34,12 +34,6 @@ gulp.task('fonts', function () {
         .pipe(gulp.dest('assets/fonts'))
 });
 
-/////////////////// FAVICON ///////////////////////
-gulp.task('favicon', function () {
-    gulp.src('react-app/deploy/favicon.ico')
-        .pipe(gulp.dest('assets'))
-});
-
 /////////////////// WATCH CSS /////////////////////
 gulp.task('watch', ['css'], function () {
     gulp.watch('react-app/sass/**/**/*.scss', ['css']);
